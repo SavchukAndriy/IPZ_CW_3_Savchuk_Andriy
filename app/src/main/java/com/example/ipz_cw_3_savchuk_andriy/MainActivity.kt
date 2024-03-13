@@ -6,10 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import com.example.ipz_cw_3_savchuk_andriy.ui.theme.IPZ_CW_3_Savchuk_AndriyTheme
 
 class MainActivity : ComponentActivity() {
@@ -22,25 +19,21 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting("Android")
+
                 }
             }
         }
     }
 }
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
+data class DayItem(val day: Int, val title: String, val imageRes: Int, val caption: String)
 
-@Preview(showBackground = true)
 @Composable
-fun GreetingPreview() {
-    IPZ_CW_3_Savchuk_AndriyTheme {
-        Greeting("Android")
+fun DayCard(dayItem: DayItem) {
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(16.dp)
+    ) {
+
     }
-}

@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 import com.example.ipz_cw_3_savchuk_andriy.ui.theme.IPZ_CW_3_Savchuk_AndriyTheme
 
 class MainActivity : ComponentActivity() {
@@ -35,5 +36,13 @@ fun DayCard(dayItem: DayItem) {
             .fillMaxWidth()
             .padding(16.dp)
     ) {
-
-    }
+        Text(text = dayItem.title, fontWeight = FontWeight.Bold)
+        Spacer(modifier = Modifier.height(8.dp))
+        Image(
+            painter = painterResource(id = dayItem.imageRes),
+            contentDescription = null,
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(250.dp)
+                .clip(shape = RoundedCornerShape(8.dp)),
+            contentScale = ContentScale.Crop

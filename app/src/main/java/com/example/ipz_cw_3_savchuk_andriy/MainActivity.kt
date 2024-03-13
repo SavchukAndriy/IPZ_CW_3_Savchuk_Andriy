@@ -4,7 +4,6 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -67,7 +66,6 @@ fun DayCard(dayItem: DayItem) {
 @Composable
 fun CardList() {
     val daysList = generateDaysList()
-
     LazyColumn {
         items(daysList) { dayItem ->
             DayCard(dayItem = dayItem)
@@ -91,11 +89,11 @@ fun generateDaysList(): List<DayItem> {
     )
 
     val dayCaptions = listOf(
-        "1",
-        "2",
-        "3",
-        "4",
-        "5"
+        "Canyon",
+        "Desert mountains",
+        "Lake",
+        "Desert",
+        "River"
     )
 
     return (1..10).mapIndexed { index, day ->

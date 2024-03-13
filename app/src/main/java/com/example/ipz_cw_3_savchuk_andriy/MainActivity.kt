@@ -73,3 +73,36 @@ fun CardList() {
         }
     }
 }
+
+@Composable
+fun generateDaysList(): List<DayItem> {
+    val dayResources = listOf(
+        R.drawable.photo1, R.drawable.photo2, R.drawable.photo3,
+        R.drawable.photo4, R.drawable.photo5,
+    )
+
+    val dayTitles = listOf(
+        "Day 1",
+        "Day 2",
+        "Day 3",
+        "Day 4",
+        "Day 5",
+    )
+
+    val dayCaptions = listOf(
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+    )
+
+    return (1..10).mapIndexed { index, day ->
+        DayItem(
+            day = day,
+            title = dayTitles[index % dayTitles.size],
+            imageRes = dayResources[index % dayResources.size],
+            caption = dayCaptions[index % dayCaptions.size]
+        )
+    }
+}

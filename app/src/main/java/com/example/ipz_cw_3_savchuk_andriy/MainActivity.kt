@@ -46,3 +46,20 @@ fun DayCard(dayItem: DayItem) {
                 .height(250.dp)
                 .clip(shape = RoundedCornerShape(8.dp)),
             contentScale = ContentScale.Crop
+        )
+        Spacer(modifier = Modifier.height(8.dp))
+        Text(text = dayItem.caption)
+    }
+}
+
+
+@Composable
+fun CardList() {
+    val daysList = generateDaysList()
+
+    LazyColumn {
+        items(daysList) { dayItem ->
+            DayCard(dayItem = dayItem)
+        }
+    }
+}

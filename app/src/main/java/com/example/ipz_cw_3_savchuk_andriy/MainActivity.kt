@@ -96,7 +96,7 @@ fun generateDaysList(): List<DayItem> {
         "River"
     )
 
-    return (1..10).mapIndexed { index, day ->
+    return (1..5).mapIndexed { index, day ->
         DayItem(
             day = day,
             title = dayTitles[index % dayTitles.size],
